@@ -63,6 +63,12 @@ const initialState = {
           ...state,
           people:action.value
         }
+        case 'DELETE_PERSON':
+          
+          return{
+            ...state,
+            people:state.people.filter(persn => persn.id !== action.personId)
+          }
       default:
        
         return state

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
 // import data from './data'
 import List from './List'
@@ -8,7 +8,9 @@ function App(props) {
     <main>
       <section className='container'>
         <h3>{props.people.length} birthdays today</h3>
-        <List people={props.people} />
+        <List 
+        people={props.people} 
+        deletePerson={ props.onDeletePerson}/>
         <button onClick={props.onClearList}>clear all</button>
       </section>
     </main>
@@ -23,7 +25,8 @@ const mapStateToProps = state =>{
 }
 const mapDispatchToProps = (dispatch) =>{
   return{
-    onClearList:() => dispatch({type:'CLEAR_LIST', value:[]})
+    onClearList:() => dispatch({type:'CLEAR_LIST', value:[]}),
+    onDeletePerson:(id) => dispatch({type:'DELETE_PERSON', personId:id})
   }
   
 }
