@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import * as actionTypes from './store/action'
 // import data from './data'
 import List from './List'
 function App(props) {
@@ -25,8 +26,8 @@ const mapStateToProps = state =>{
 }
 const mapDispatchToProps = (dispatch) =>{
   return{
-    onClearList:() => dispatch({type:'CLEAR_LIST', value:[]}),
-    onDeletePerson:(id) => dispatch({type:'DELETE_PERSON', personId:id})
+    onClearList:() => dispatch({type:actionTypes.CLEAR_LIST, value:[]}),
+    onDeletePerson:(id) => dispatch({type:actionTypes.DELETE_PERSON, personId:id})
   }
   
 }
