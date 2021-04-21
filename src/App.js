@@ -20,7 +20,8 @@ function App(props) {
 
 const mapStateToProps = state =>{
   return{
-    people: state.people
+    people: state.clear_red.people,
+    people_del: state.delete_red.people
   }
  
 }
