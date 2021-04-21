@@ -58,6 +58,11 @@ const initialState = {
     // The reducer normally looks at the action type field to decide what happens
     switch (action.type) {
       // Do something here based on the different types of actions
+      case 'CLEAR_LIST':
+        return{
+          ...state,
+          people:action.value
+        }
       default:
        
         return state
